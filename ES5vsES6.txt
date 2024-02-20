@@ -1,0 +1,97 @@
+// ES5 vs ES6
+var a = 32
+var b = 33
+console.log("The value of a and b is"+(a+b)+"adding here");
+//Syntax: console.log(`${expression}`)
+console.log(`The value of a and b is ${a+b} adding here`);
+//The main purpose of using the template
+//literals is to make the output statement much effective
+// Es6
+// spread operator and rest parameter..
+// Syntax: ...
+var arr = [23, 34, 35];
+function foo(a,b){
+return a+b;
+}
+// console.log(foo(arr[0],arr[1]))
+// ES6 has given the spread operator
+console.log(foo(...arr))
+// it will perform the expanding of array elements
+// Es6
+// spread operator and rest parameter..
+// Syntax: ...
+var arr1 = [23,34,35];
+var arr2 = [32,33,34];
+// Combine both the array
+// Spread Operator
+var res = [...arr1,...arr2];
+
+// Es6
+// spread operator and rest parameter..
+// Syntax: ...
+// var obj1 = {name:"guvi",age:23}
+// // spread operator
+// var obj2 = {Instituion_name:"Institution",...obj1}
+// console.log(obj2);
+// End Result: {Instituion_name:"Institution",name:"guvi",age:23}
+// spread operator
+
+var arr = [12,13,14,98,25,47,122,45,45,36]
+console.log(Math.max(...arr))
+
+// rest parameter
+function bar(a,b,...abc){
+return a+b;
+}
+console.log(bar(12,13,14,15,16,17));
+// rest parameter
+// syntax: ...rest
+// rest parameter is used for storing the remaining elements 
+// The return type of the rest parameter is of array
+
+
+// Write a function  such that what ever the value that has been a
+//passed to that function it will sum it up and return the value
+ function foo(...arr){
+ var sum = 0;
+ for(var i=0;i<arr.length;i++){
+ sum = sum+arr[i]
+ }
+ return sum;
+ 
+ }
+ console.log(foo(12,13))
+ console.log(foo(121,131))
+ console.log(foo(12111,13111,1441,1551))
+
+
+
+5.Write a JavaScript function to find the most frequent item of an array.
+Sample array: 
+var arr1=[3, 'q', 'q', 'q', 2, 3, 'q', 3, 'q', 2, 4, 9, 3];
+Sample Output: q 
+
+
+ var arr1=[3, 'q', 'q', 'q', 2, 3, 'q', 3, 'q', 2, 4, 9, 3];
+// Sample Output: q 
+// Objects
+var obj = {}
+var min_occ = 1
+var max_ele;
+function foo(arr){
+  for(var i =0;i<arr.length;i++){
+  var ele = arr[i];
+  if(obj[ele]){
+  obj[ele]++;
+  }
+  else{
+  obj[ele]=1
+  }
+  if(obj[ele]>min_occ){
+  min_occ = obj[ele]
+  max_ele = ele
+  }
+}
+return max_ele;
+}
+console.log(foo(arr1))

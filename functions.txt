@@ -1,0 +1,143 @@
+// Functions and its types
+// A function represents the group of code
+// console.log(2*7);
+// console.log(2*7);
+// console.log(12*12);
+// console.log(1331*1331);
+// DRY 
+//Syntax:
+// function functionname(){}
+// here function is a keyword
+// functionname is a user defined...
+function subtract(a,b){
+    return a-b;
+}
+ function mul(a,b){ 
+     // here a and b represents the function parameter..
+     // here multiply will be the operation
+     // for every function we should have the return keyword...
+     return a*b;
+ }
+ function add(a,b){
+     return a+b;
+ }
+ // functionname()
+ console.log(mul(12,13));
+ console.log(mul(13331,1441))
+ // every function should have a return keyword...
+ function foo(a,b,e,f){
+    var temp = a+b;
+    return temp;
+}
+foo(12,13);
+// foo(12,13);
+//  if return keyword is missing then,
+// it will throw undefined..
+
+//Purpose of return keyword:
+// to take the result outside of the function..
+// whenver if you are calling the foo() function from the console.log()
+// it expects the return keyword..
+// every function should have only one return keyword..
+//only one value can be obtained from the function..
+
+
+// For Array
+function foo(arr){
+  for(var i = 0;i<arr.length;i++){
+  console.log(arr[i]);
+  }
+}
+console.log(foo([12,13,14,15]));
+
+// For Objects:
+var obj = {
+  name:"john doe",
+  age:23
+}
+function bar(obj){
+for(var i in obj){
+console.log(obj[i]);
+}
+}
+console.log(bar(obj));
+
+
+// write a function which will print both even and odd numbers
+var obj = {}
+function foo(arr){
+for(var i=0;i<arr.length;i++){
+if(arr[i]%2 == 0){
+obj[arr[i]] = "even"
+}
+else{
+obj[arr[i]] = "odd"
+}
+}
+return obj;
+}
+console.log(foo([12,13,14,15]));
+
+// functions for even as well as odd
+// write a function which will print only the even numbers
+var even = [];
+var odd = [];
+function foo(arr){
+for(var i=0;i<arr.length;i++){
+if(arr[i]%2 == 0){
+even.push(arr[i]);
+}
+else{
+odd.push(arr[i]);
+}
+}
+return odd;
+}
+console.log(foo([12,13,14,15]));
+
+
+// generic,anonymous,arrow functions as well as IIFE
+// Anonymous function syntax:
+//var variablename = function(){}
+// here the function result is stored in a variable.
+var obj = {}
+var res = function(arr){
+for(var i=0;i<arr.length;i++){
+if(arr[i]%2 == 0){
+obj[arr[i]] = "even"
+}
+else{
+obj[arr[i]] = "odd"
+}
+}
+return obj;
+}
+var result = res([12,13]);
+console.log(result);
+
+1.Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+
+Input:(foo([7, 9, 0, -2]))
+output:7
+
+Input:(foo([0,6,4,5]))
+output:0
+
+Input:(foo([1,2,3,4],-3))
+Output:[];
+
+Input:(foo([1,2,3,4],3))
+Output:[1,2,3]
+
+Input:(foo([1,2,3,4],5))
+Output:[1,2,3,4]
+// Solution for First 1 question:
+function foo(arr,n){
+  if(n == undefined)
+    return arr[0]
+  if(n<0)
+    return []
+  return arr.slice(0,n);
+}
+
+console.log(foo([1,2,3,4],-5));

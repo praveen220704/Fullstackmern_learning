@@ -1,0 +1,39 @@
+var Obj1 = {
+ name:"john doe",age:23,year:2018,attendance:[12,13,14]
+}
+console.log(Obj1);
+// we can apply loop but not for loop
+var Obj1 = {
+ name:"john doe",age:23,year:2018,attendance:[13,14,15,26]
+ }
+
+
+// we can apply loop but not for loop
+// here the iteration depends on the no of keys present in the Object
+
+//2nd Method:
+//Box Method:
+//Purpose:it has to be applied when you are applying for-in loop
+//Syntax: console.log(Objectname["keyname"])
+console.log(Obj1["name"]);
+console.log(Obj1["year"]);
+console.log(Obj1["attendance"][3]);
+
+//for-in loop
+//Applicable to key:value pair Objects..
+
+//Syntax:for(var key in Objectname){console.log(key,Obj[key])}
+for(var i in Obj1){
+console.log(i,Obj1[i]);
+}
+
+var Obj1 = {
+ stu1:{name:"john doe",age:23,year:2018,attendance:[13,14,15,26]}
+ }
+//How to print, if in case of nested Objects...
+//Store in a variable
+var res = Obj1.stu1
+//step2:Apply for in loop
+for(var i in res){
+  console.log(res[i]);
+}

@@ -1,0 +1,69 @@
+// What is JSON??
+//How it has been Evolved?
+//JSON: Javascript Object Notation
+
+//This is Object
+var obj = {
+  name:"john doe",                    
+  age:23
+}
+// This is Json
+var obj1 = {
+  "name":"mary doe",
+  "age":23
+}
+//here key will be in double quotes.
+console.log(obj1.name);
+// Array of Json
+
+var arr=[
+  {
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  },
+  {
+    "id": 2,
+    "title": "qui est esse",
+  },
+  {
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+  },
+  {
+    "id": 4,
+    "title": "eum et est occaecati",
+  },
+  {
+    "id": 5,
+    "title": "nesciunt quas odio",
+  },
+  {    
+    "id": 6,
+    "title": "dolorem eum magni eos aperiam quia"
+  }]
+  
+  // first step is
+  // ARRAY INDEX
+  
+  //Second Step
+  //object key
+  
+  //Syntax:arrayname[index].keyname
+  
+  // For Printing:
+  // Apply For Loop
+  for(var i=0;i<4;i++){
+    console.log(arr[i].id,arr[i].title);
+  }
+
+
+// XML-HTTP Methods:
+// Purpose:it is used to interact with the
+// servers via API
+
+//Total There are 5 steps
+
+//Step 01: Create a XML-HTTP Object
+var request =  new XMLHttpRequest();
+//Step 02: Open a Request
+request.open("GET","https://restcountries.com/v3.1/all")

@@ -1,0 +1,75 @@
+// Arrow functions as well as IIFE
+// Arrow Functions -> ES6
+// Syntax: var variablename = (function parameters)=>{}
+// the main purpose is to reduce the code length
+function foo(){
+  return "hello world"
+}
+//Above function can be written in arrow function 
+var res = ()=>"hello world"
+console.log(foo());
+console.log(res());
+// Arrow function has a special case
+// if a function has a single statement,
+// ex: a+b,,a-b,a*b,a/b
+// there is no need of return keyword...
+
+var add = (a,b)=>a+b;
+console.log(add(12,12));
+// second case
+function bar(){
+console.log("Hello world");
+return "this is result"
+}
+// if a function has / if a function has the multiple lines
+// then you need to add  the return keyword...
+var result = ()=>{
+console.log("Hello world");
+return "this is result"
+}
+
+
+2.Write a JavaScript function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
+Input :                                     	Expected Output :
+console.log(last([7, 9, 0, -2]));         -2
+console.log(last([7, 9, 0, -2],3));    [9, 0, -2]
+console.log(last([7, 9, 0, -2],6));    [7, 9, 0, -2] 
+
+
+function foo(arr,n){
+if (n == undefined)
+  return arr[arr.length-1]
+return arr.slice(-n)
+}
+console.log(foo([7,9,0,2,20,65,47,85,95,4],10));
+
+
+Print the Below Pattern
+ * 
+ * *
+ * * *
+ * * * *
+* * * *
+* * *
+* *
+*
+
+var rows = 4;
+// this is for number of rows
+for(var i=0;i<rows;i++){
+var stars = i+1;
+var temp = " "
+for(var j=0;j<stars;j++){
+temp=temp+"*"+" "
+}
+console.log(temp.trim(" "));
+}
+// second half of the pattern
+for(var i=0;i<rows;i++){
+var stars = rows-i;
+var temp = " "
+for(var j=0;j<stars;j++){
+temp=temp+"*"+" "
+}
+console.log(temp.trim(" "));
+}

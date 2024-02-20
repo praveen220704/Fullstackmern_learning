@@ -1,0 +1,120 @@
+// Classes and Objects...
+// var let and const
+// Hoisitng
+
+// Main 4 pillars
+// Encapsulation
+//inheritance
+//polymorphism
+//Abstraction.
+
+
+// Encapsulation: protecting 
+// Inheritance:copying the properties from the parent...
+//Polymorphism:
+//Abstraction: Hiding the Implementation details from the user...
+
+
+//classes and objects...
+
+// Prototype...
+// class: it is the collection/blueprint of properties, Objects...etc..
+//Object: An Object is a real time entity...
+
+// Syntax:
+// class classname{
+// }
+// var objectname = new classname();
+
+// Ex:
+class Car
+{
+  constructor(name,color){
+  this.name = name
+  this.color = color
+  }
+  
+
+}
+// specifically it belongs to class of type car..
+var c1 = new Car("BMW","black");
+console.log(c1);
+var c2 = new Car("Audi",{color:"pale"},"petrol");
+console.log(c2);
+c2.color = "red"
+console.log(c2);
+// new is a keyword
+// it will helps u to create  the fresh Objects...
+
+//constructor: it is the way to assign the values to Objects..
+// here name and color is the constructor parameter...
+
+
+//Syntax: constructor(){}
+
+
+//this is a keyword.
+// it is a temproray reference to freshly created Objects...
+
+
+class Bike
+{
+  constructor(name,color,mileage,speed){
+  this.name = name
+  this.color = color
+  this.mileage =  mileage
+  this.speed=speed
+  }
+  // Method
+  print_name(){
+  return `The name of the Bike is ${this.name}`
+  }
+
+}
+
+var b1 = new Bike("FZ","blue",32,"50km/h");
+var b2 = new Bike("KTM","blue",12,"40km/h");
+//Syntax:objectname.methodname())
+console.log(b1.print_name());
+console.log(b2.print_name());
+// if you write a function inside the class then,
+// it is called as method..
+
+
+// for-loop: it's a fixed iteration (both fwd and bwk)
+// for-in: it's applicable for Objects(K:V)
+// for-off: it is applicable for the array
+// for-each: it is applicable gfor array
+
+// For-of, For-each
+// for ...of: this is applicable only to Arrays.. strings...
+var arr = [12,13,134]
+// Syntax:for(var variable of array){}
+// here i represents the array elements..
+for(var i of arr){
+console.log(i);
+}
+
+// for-each:
+// it takes function as a parameter 
+// apply on each and every element of the array
+// return undefined..
+
+// The main Purpose is Printing...
+
+//Syntax:arrayname.forEach(()=>{})
+arr.forEach((ele)=>console.log(ele))
+
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// Expected output: Array ["a", "b", "c"]
+for(var key of Object.keys(object1)){
+  console.log(`values:${object1[key]}`)
+}
+Object.values(object1).forEach((ele)=>console.log(ele))

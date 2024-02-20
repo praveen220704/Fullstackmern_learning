@@ -1,0 +1,111 @@
+// Map ,reduce and filter..
+// Problems...
+//(MRF) methods..
+// This is applicable only to arrays..
+var arr = [12,13,14,15,16,17];
+// below is the resultant array
+// var res = [24,26,28,30,32,34];
+// step 01: for loop
+// step 02: take a temp array
+// step 03: multiply each element by 2
+// step 04: push the result to the temp array
+// step 05: print the temp array
+
+//map:
+//map takes function as a parameter
+// apply on each and every element of the array
+// returns the new array
+// Syntax: var reultantarrayname = arrayname.map(()=>{});
+// ele represents array elements and it is user defined...
+//main purpose: if u need a result in terms of array
+
+//var res = arr.map((ele)=>ele*2);
+// console.log(res);
+
+
+var str = ["go","come","play"]
+// var res = ["gos","comes","plays"]
+var res = str.map((ele)=>ele+"s");
+console.log(res);
+
+
+// Map ,reduce and filter..
+// Problems...
+//(MRF) methods..
+// This is applicable only to arrays..
+var arr = [12,13,14,15,16,17];
+// below is the resultant array
+// var res = [12,14,16];
+// step 01: for loop
+// step 02: take each element and apply condition(if condition)
+// step 03: take a temp array
+// step 04: if the condition is satisified, push the ele to temp array
+// step 05: if the condition failed it has to be ignored...
+// step 06: print the resultant array
+
+// Filter:
+// it is applicable to the functions
+// it takes function as a parameter
+// inside the function we have the condition
+// if the condition is satisifed then it will be pushed to resultant array
+// Syntax: var variablename = arrayname.filter(()=>{})
+var res = arr.filter((ele)=>ele%2===0)
+console.log(res);
+
+
+var request =  new XMLHttpRequest();
+request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json")
+request.send();
+request.onload = function(){
+var res = JSON.parse(request.response);
+console.log(res);
+
+// 1.print  only those  countries name which belongs to asia region
+
+// var result_asia = res.filter((ele)=>ele.region == "Asia");
+// console.log(result_asia)
+// var country_names = result_asia.map((ele)=>ele.name);
+// console.log(country_names);
+
+// 2. Print capitals of those countires whose population is less than 2Lakhs
+
+var popu = res.filter((ele)=>ele.population<200000);
+console.log(popu);
+var popu_res = popu.map((ele)=>ele.capital)
+console.log(popu_res);
+}
+
+
+// Reduce:
+var arr = [12,13,14,15]
+// My expected result is
+// 54
+// Step 01: take a empty array
+// Step 02: Apply for loop
+// Step 03: sum=sum+arr[i]
+// Step 04: Print the sum
+
+// Reduce function
+// it is applicable to array
+// it takes function as a parameter
+// inside the function we have 2 parameters
+//acc and cv
+// where acc is the initial value
+// print the  sum of the elements in the array
+//Syntax:var res = arrayname.reduce((acc,cv)=>acc+cv,0)
+
+var res = arr.reduce((acc,cv)=>acc+cv,0)
+console.log(res);
+
+
+// Print the sum of total population of all the countries in console
+
+var request =  new XMLHttpRequest();
+request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json")
+request.send();
+request.onload = function(){
+var res = JSON.parse(request.response);
+console.log(res);
+var total_popu = res.reduce((acc,cv)=>acc+cv.population,0)
+console.log(total_popu);
+}
